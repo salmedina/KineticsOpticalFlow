@@ -6,7 +6,8 @@ output_dir=$2
 for file in ${video_dir}/*.mp4; do
     filename=$(basename -- "$file")
     filename="${filename%.*}"
-    echo "${output_dir}/${filename}"
+    destination="${output_dir}/${filename}"
+    echo ${destination}
     mkdir -p "${output_dir}/${filename}";
-    ffmpeg -i "$file" -r 1 "$destination/%06d.jpg";
+    ffmpeg -i "$file" "$destination/%06d.jpg";
 done
