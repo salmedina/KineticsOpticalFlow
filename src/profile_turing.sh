@@ -13,5 +13,5 @@ for video_path in ${video_dir}/*.mp4; do
     video_output_dir=${output_dir}/${video_name}
     echo "${video_output_dir}"
     mkdir -p ${video_output_dir}
-    AppOFCuda --input=${video_frames_dir}/*.png --output=${video_output_dir} --gpuIndex=0 --preset=medium
+    AppOFCuda --input=${video_frames_dir}/*.png --output=${video_output_dir}/ --gpuIndex=0 --preset=medium
 done
