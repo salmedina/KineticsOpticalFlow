@@ -11,6 +11,7 @@ for video_path in ${video_dir}/*.mp4; do
     video_name="${file_name%.*}"
     video_frames_dir=${frames_dir}/${video_name}
     video_output_dir=${output_dir}/${video_name}
-    echo "AppOFCuda --input=${video_frames_dir}/*.jpg --output=${video_output_dir}/*.flo --gpuIndex=0 --preset=medium"
-    #python3 AppOFCuda --input=${video_frames_dir}/*.jpg --output=${video_output_dir}/${video_name} --gpuIndex=0 --preset=medium
+    echo "${video_output_dir}"
+    mkdir -p ${video_output_dir}
+    python3 AppOFCuda --input=${video_frames_dir}/*.png --output=${video_output_dir} --gpuIndex=0 --preset=medium
 done
