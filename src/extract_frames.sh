@@ -9,5 +9,5 @@ for file in ${video_dir}/*.mp4; do
     destination="${output_dir}/${filename}"
     echo ${destination}
     mkdir -p "${output_dir}/${filename}";
-    ffmpeg -i "$file" "$destination/%06d.jpg";
+    ffmpeg -i "$file" "$destination/%06d.png";
 done
